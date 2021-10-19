@@ -18,10 +18,10 @@ export default function ImageGallery({ search, onShowModal, modalImg }) {
     setpage((prevState) => prevState + 1);
   }
 
-  function handlerClick(e) {
-    if (e.target.attributes.bigimg) {
+  function handlerClick(largeImg) {
+    if (largeImg) {
       onShowModal();
-      modalImg(e.target.attributes.bigimg.value);
+      modalImg(largeImg);
     }
   }
 
@@ -69,9 +69,9 @@ export default function ImageGallery({ search, onShowModal, modalImg }) {
     return (
       <div>
         {imgName && (
-          <ul onClick={handlerClick} className={s.ImageGallery}>
+          <ul className={s.ImageGallery}>
             {imgName.map((img) => (
-              <ImageGalleryItem img={img} key={img.id} />
+              <ImageGalleryItem onClick={handlerClick} img={img} key={img.id} />
             ))}
           </ul>
         )}
@@ -90,9 +90,9 @@ export default function ImageGallery({ search, onShowModal, modalImg }) {
     return (
       <div>
         {imgName.length > 0 ? (
-          <ul onClick={handlerClick} className={s.ImageGallery}>
+          <ul className={s.ImageGallery}>
             {imgName.map((img) => (
-              <ImageGalleryItem img={img} key={img.id} />
+              <ImageGalleryItem onClick={handlerClick} img={img} key={img.id} />
             ))}
           </ul>
         ) : (

@@ -1,10 +1,14 @@
 import s from "./ImageGalleryItem.module.css";
 import PropTypes from "prop-types";
 
-export default function ImageGalleryItem({ img }) {
+export default function ImageGalleryItem({ img, onClick }) {
+  const handlerOnClick = () => {
+    onClick(img.largeImageURL);
+  };
   return (
     <li className={s.ImageGalleryItem}>
       <img
+        onClick={handlerOnClick}
         bigimg={img.largeImageURL}
         src={img.webformatURL}
         alt={img.tag}
