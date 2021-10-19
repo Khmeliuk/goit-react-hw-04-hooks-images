@@ -18,11 +18,3 @@ export default class Button extends Component {
 }
 
 Button.propType = { onSubmit: PropTypes.func.isRequired };
-
-// Statistics.prototype = {
-//   good: PropTypes.number.isRequired,
-//   neutral: PropTypes.number.isRequired,
-//   bad: PropTypes.number.isRequired,
-//   total: PropTypes.number.isRequired,
-//   positive: PropTypes.number.isRequired,
-// };
